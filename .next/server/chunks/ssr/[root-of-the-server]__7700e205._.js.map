@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 20, "column": 0}, "map": {"version":3,"sources":["file:///Users/harshitgangwar/Desktop/SkillForge/app/%28main%29/ai-cover-letter/page.jsx"],"sourcesContent":["import React from 'react'\n\nconst AICoverLetterPage = () => {\n  return (\n    <div>A.I. Cover Letter Page</div>\n  )\n}\n\nexport default AICoverLetterPage"],"names":[],"mappings":";;;;;AAAA;;;AAEA,MAAM,oBAAoB;IACxB,qBACE,8OAAC;kBAAI;;;;;;AAET;uCAEe","debugId":null}}]
+}

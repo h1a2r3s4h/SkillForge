@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["file:///Users/harshitgangwar/Desktop/SkillForge/app/%28main%29/ai-cover-letter/%5Bid%5D/page.jsx"],"sourcesContent":["import React from 'react'\n\nconst CoverLetter = async ({params}) => {\n    const id = await params.id;\n  return <div> Cover Letter: {id} </div>\n  \n}\n\nexport default CoverLetter;"],"names":[],"mappings":";;;;;AAAA;;;AAEA,MAAM,cAAc,OAAO,EAAC,MAAM,EAAC;IAC/B,MAAM,KAAK,MAAM,OAAO,EAAE;IAC5B,qBAAO,8OAAC;;YAAI;YAAgB;YAAG;;;;;;;AAEjC;uCAEe","debugId":null}}]
+}

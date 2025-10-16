@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 20, "column": 0}, "map": {"version":3,"sources":["file:///Users/harshitgangwar/Desktop/SkillForge/app/%28main%29/interview/page.jsx"],"sourcesContent":["import React from 'react'\n\nconst InterviewPage = () => {\n  return (\n    <div>Interview Page</div>\n  )\n}\n\nexport default InterviewPage"],"names":[],"mappings":";;;;;AAAA;;;AAEA,MAAM,gBAAgB;IACpB,qBACE,8OAAC;kBAAI;;;;;;AAET;uCAEe","debugId":null}}]
+}

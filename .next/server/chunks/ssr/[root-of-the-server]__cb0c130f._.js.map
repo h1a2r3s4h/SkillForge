@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 15, "column": 0}, "map": {"version":3,"sources":["file:///Users/harshitgangwar/Desktop/SkillForge/app/page.js"],"sourcesContent":["import Image from \"next/image\";\n\nexport default function Home() {\n  return <div>roadside coder\n    <br/>\n    <Button></Button>\n  </div>\n    \n  \n}\n"],"names":[],"mappings":";;;;;AAAA;;;AAEe,SAAS;IACtB,qBAAO,8OAAC;;YAAI;0BACV,8OAAC;;;;;0BACD,8OAAC;;;;;;;;;;;AAIL","debugId":null}}]
+}
