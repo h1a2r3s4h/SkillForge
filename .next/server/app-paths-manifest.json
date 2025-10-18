@@ -1,9 +1,6 @@
 {
-  "/(auth)/sign-in/[[...sign-in]]/page": "app/(auth)/sign-in/[[...sign-in]]/page.js",
-  "/(main)/career-faqs/page": "app/(main)/career-faqs/page.js",
   "/(main)/dashboard/page": "app/(main)/dashboard/page.js",
   "/(main)/roadmaps/page": "app/(main)/roadmaps/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js"
 }
