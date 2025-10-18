@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "./ui/button";
 import {
@@ -8,6 +7,8 @@ import {
   GraduationCap,
   ChevronDown,
   StarsIcon,
+  Map,
+  HelpCircle,
 } from "lucide-react";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
@@ -19,7 +20,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import Image from "next/image";
 import { checkUser } from "@/lib/checkUser";
-
 
 export default async function Header() {
   await checkUser();
@@ -86,6 +86,20 @@ export default async function Header() {
                   <Link href="/interview" className="flex items-center gap-2">
                     <GraduationCap className="h-4 w-4" />
                     Interview Prep
+                  </Link>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem asChild>
+                  <Link href="/career-faqs" className="flex items-center gap-2">
+                    <HelpCircle className="h-4 w-4" />
+                    Career FAQs
+                  </Link>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem asChild>
+                  <Link href="/roadmaps" className="flex items-center gap-2">
+                    <Map className="h-4 w-4" />
+                    Roadmaps
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
