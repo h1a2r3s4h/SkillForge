@@ -231,6 +231,7 @@ const frontendRoadmap = {
     title: "React Alchemist 🧪",
     objective:
       "Master the art of building dynamic, interactive, and scalable web applications using React.js, Next.js, Tailwind CSS, ShadCN, and other modern technologies. Learn best practices, performance optimizations, and advanced patterns for building professional-grade React applications.",
+      pdf: "/pdfs/react.pdf",
     sections: [
       {
         title: "1. Introduction to React – The Modern JavaScript Library",
@@ -375,6 +376,7 @@ const frontendRoadmap = {
       },
       {
         title: "15. NextJS – The React Framework for Full-Stack Applications",
+        pdf: "/pdfs/nextjs.pdf",
         points: [
           "Introduction to Next.js and why it’s an essential tool for React developers",
           "Setting up a Next.js project and understanding its file-based routing",

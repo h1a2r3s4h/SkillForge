@@ -1,14 +1,16 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import roadmapData from "./index"; // ✅ import all roadmaps
+import roadmapData from "./index"; // Import your roadmap
 
 export default function Page() {
   const [selected, setSelected] = useState("Frontend");
-  const [selectedTopic, setSelectedTopic] = useState("HTML & CSS");
+  const [selectedTopic, setSelectedTopic] = useState(
+    Object.keys(roadmapData["Frontend"])[0]
+  );
 
-  const items = Object.keys(roadmapData);
-  const frontendTopics =
+  const categories = Object.keys(roadmapData);
+  const topics =
     typeof roadmapData[selected] === "object"
       ? Object.keys(roadmapData[selected])
       : [];
@@ -25,22 +27,22 @@ export default function Page() {
         <h1 className="text-3xl font-extrabold mb-10 text-indigo-400 tracking-wide">
           Skill<span className="text-white">Forge</span>
         </h1>
-        {items.map((item) => (
+        {categories.map((category) => (
           <button
-            key={item}
+            key={category}
             className={`mb-3 p-3 text-left rounded-xl font-medium transition-all duration-200 ${
-              selected === item
+              selected === category
                 ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/30"
                 : "bg-gray-900 hover:bg-gray-800"
             }`}
             onClick={() => {
-              setSelected(item);
+              setSelected(category);
               setSelectedTopic(
-                Object.keys(roadmapData[item])[0] || roadmapData[item][0]
+                Object.keys(roadmapData[category])[0] || ""
               );
             }}
           >
-            {item}
+            {category}
           </button>
         ))}
       </div>
@@ -51,9 +53,10 @@ export default function Page() {
           {selected} Roadmap
         </h2>
 
-        {selected === "Frontend" && (
+        {/* Topics Buttons */}
+        {topics.length > 0 && (
           <div className="flex gap-3 mb-6 flex-wrap">
-            {frontendTopics.map((topic) => (
+            {topics.map((topic) => (
               <button
                 key={topic}
                 className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
@@ -69,42 +72,46 @@ export default function Page() {
           </div>
         )}
 
+        {/* Roadmap Content */}
         <motion.div
           className="space-y-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          {selectedContent && typeof selectedContent === "object" && selectedContent.sections ? (
+          {/* PDF Download Button */}
+          {selectedContent?.pdf && (
+            <a
+              href={selectedContent.pdf}
+              download
+              target="_blank"
+              className="inline-block mb-6 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl font-semibold transition-all"
+            >
+              Download PDF
+            </a>
+          )}
+
+          {/* Sections */}
+          {selectedContent && selectedContent.sections ? (
             <div className="bg-gray-900/60 p-6 rounded-xl border border-gray-800 backdrop-blur-md">
               <h3 className="text-2xl font-bold text-indigo-400 mb-2">
                 {selectedContent.title}
               </h3>
               <p className="text-gray-300 mb-6">{selectedContent.objective}</p>
+
               {selectedContent.sections.map((section, index) => (
                 <div key={index} className="mb-6">
                   <h4 className="text-xl font-semibold text-indigo-300 mb-2">
                     {section.title}
                   </h4>
                   <ul className="list-disc list-inside text-gray-300 space-y-1">
-                    {section.points.map((p, i) => (
-                      <li key={i}>{p}</li>
+                    {section.points.map((point, i) => (
+                      <li key={i}>{point}</li>
                     ))}
                   </ul>
                 </div>
               ))}
             </div>
-          ) : Array.isArray(selectedContent) ? (
-            <ul className="space-y-3">
-              {selectedContent.map((step, index) => (
-                <li
-                  key={index}
-                  className="p-4 bg-gray-900/70 rounded-xl border border-gray-800 hover:border-indigo-500 transition-all"
-                >
-                  {step}
-                </li>
-              ))}
-            </ul>
           ) : (
             <p className="text-gray-400">No roadmap content available.</p>
           )}

@@ -2,8 +2,8 @@
   "node": {
     "7f0341da4685030f7b68e24378e6db3d1aa5646d13": {
       "workers": {
-        "app/(main)/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/(main)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/actions/dashboard.js [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/actions/user.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+        "app/(main)/career-faqs/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/career-faqs/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "collectKeylessMetadata",
           "filename": "node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js"
@@ -22,7 +22,7 @@
         }
       },
       "layer": {
-        "app/(main)/dashboard/page": "rsc",
+        "app/(main)/career-faqs/page": "rsc",
         "app/(main)/roadmaps/page": "rsc",
         "app/page": "rsc"
       },
@@ -31,8 +31,8 @@
     },
     "7f2dc9273cebfb053cc4896b1e910ea5ebf49be2a3": {
       "workers": {
-        "app/(main)/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/(main)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/actions/dashboard.js [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/actions/user.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+        "app/(main)/career-faqs/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/career-faqs/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "formatMetadataHeaders",
           "filename": "node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js"
@@ -51,7 +51,7 @@
         }
       },
       "layer": {
-        "app/(main)/dashboard/page": "rsc",
+        "app/(main)/career-faqs/page": "rsc",
         "app/(main)/roadmaps/page": "rsc",
         "app/page": "rsc"
       },
@@ -60,8 +60,8 @@
     },
     "7f1004e734927ab31688c306342972a9d72dfc679c": {
       "workers": {
-        "app/(main)/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/(main)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/actions/dashboard.js [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/actions/user.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+        "app/(main)/career-faqs/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/career-faqs/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "syncKeylessConfigAction",
           "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
@@ -80,7 +80,7 @@
         }
       },
       "layer": {
-        "app/(main)/dashboard/page": "action-browser",
+        "app/(main)/career-faqs/page": "action-browser",
         "app/(main)/roadmaps/page": "action-browser",
         "app/page": "action-browser"
       },
@@ -89,8 +89,8 @@
     },
     "7fdcef378318b961c2de6d7dd3e5c28b0f47f6ef98": {
       "workers": {
-        "app/(main)/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/(main)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/actions/dashboard.js [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/actions/user.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+        "app/(main)/career-faqs/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/career-faqs/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "detectKeylessEnvDriftAction",
           "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
@@ -109,7 +109,7 @@
         }
       },
       "layer": {
-        "app/(main)/dashboard/page": "action-browser",
+        "app/(main)/career-faqs/page": "action-browser",
         "app/(main)/roadmaps/page": "action-browser",
         "app/page": "action-browser"
       },
@@ -118,8 +118,8 @@
     },
     "7ff9758eba5ceeb4c41ef9cea216996ddaaabc7223": {
       "workers": {
-        "app/(main)/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/(main)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/actions/dashboard.js [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/actions/user.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+        "app/(main)/career-faqs/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/career-faqs/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "deleteKeylessAction",
           "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
@@ -138,7 +138,7 @@
         }
       },
       "layer": {
-        "app/(main)/dashboard/page": "action-browser",
+        "app/(main)/career-faqs/page": "action-browser",
         "app/(main)/roadmaps/page": "action-browser",
         "app/page": "action-browser"
       },
@@ -147,8 +147,8 @@
     },
     "7ffb95497822e33d6a3631574c2547f30bcf0430e9": {
       "workers": {
-        "app/(main)/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/(main)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/actions/dashboard.js [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/actions/user.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+        "app/(main)/career-faqs/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/career-faqs/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "createOrReadKeylessAction",
           "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
@@ -167,7 +167,7 @@
         }
       },
       "layer": {
-        "app/(main)/dashboard/page": "action-browser",
+        "app/(main)/career-faqs/page": "action-browser",
         "app/(main)/roadmaps/page": "action-browser",
         "app/page": "action-browser"
       },
@@ -176,8 +176,8 @@
     },
     "7fc31ae783ab0cd2270a2ae891305c91c4832b4089": {
       "workers": {
-        "app/(main)/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/(main)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/actions/dashboard.js [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/actions/user.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+        "app/(main)/career-faqs/page": {
+          "moduleId": "[project]/.next-internal/server/app/(main)/career-faqs/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
           "exportedName": "invalidateCacheAction",
           "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
@@ -196,72 +196,12 @@
         }
       },
       "layer": {
-        "app/(main)/dashboard/page": "action-browser",
+        "app/(main)/career-faqs/page": "action-browser",
         "app/(main)/roadmaps/page": "action-browser",
         "app/page": "action-browser"
       },
       "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js",
       "exportedName": "invalidateCacheAction"
-    },
-    "00fd9a76538e46ac505176edc3af2d903147fc5155": {
-      "workers": {
-        "app/(main)/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/(main)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/actions/dashboard.js [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/actions/user.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "getIndustryInsights",
-          "filename": "actions/dashboard.js"
-        }
-      },
-      "layer": {
-        "app/(main)/dashboard/page": "rsc"
-      },
-      "filename": "actions/dashboard.js",
-      "exportedName": "getIndustryInsights"
-    },
-    "7fc8da251ab711352b964e6b75fa839b8b17bd9ddd": {
-      "workers": {
-        "app/(main)/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/(main)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/actions/dashboard.js [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/actions/user.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "generateAIInsights",
-          "filename": "actions/dashboard.js"
-        }
-      },
-      "layer": {
-        "app/(main)/dashboard/page": "rsc"
-      },
-      "filename": "actions/dashboard.js",
-      "exportedName": "generateAIInsights"
-    },
-    "00570153b607cd55ffce061a4c828156986064cca3": {
-      "workers": {
-        "app/(main)/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/(main)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/actions/dashboard.js [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/actions/user.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "getUserOnboardingStatus",
-          "filename": "actions/user.js"
-        }
-      },
-      "layer": {
-        "app/(main)/dashboard/page": "rsc"
-      },
-      "filename": "actions/user.js",
-      "exportedName": "getUserOnboardingStatus"
-    },
-    "402eaa9fcf95938e36ed1a74dee53d5f9cc7ac199d": {
-      "workers": {
-        "app/(main)/dashboard/page": {
-          "moduleId": "[project]/.next-internal/server/app/(main)/dashboard/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/actions/dashboard.js [app-rsc] (ecmascript)\", ACTIONS_MODULE4 => \"[project]/actions/user.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
-          "async": false,
-          "exportedName": "updateUser",
-          "filename": "actions/user.js"
-        }
-      },
-      "layer": {
-        "app/(main)/dashboard/page": "rsc"
-      },
-      "filename": "actions/user.js",
-      "exportedName": "updateUser"
     }
   },
   "edge": {},
