@@ -908,6 +908,12 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$data$2f$backend$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(main)/roadmaps/data/backend.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$data$2f$dsa$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(main)/roadmaps/data/dsa.jsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$data$2f$deployAI$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(main)/roadmaps/data/deployAI.jsx [app-ssr] (ecmascript)"); // import your Deploy & AI Squad roadmap
+(()=>{
+    const e = new Error("Cannot find module './data/4yearroadmap'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
+;
 ;
 ;
 ;
@@ -916,7 +922,8 @@ const roadmapData = {
     Frontend: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$data$2f$frontend$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"],
     Backend: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$data$2f$backend$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"],
     DSA: __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$data$2f$dsa$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"],
-    "Deploy & AI Squad": __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$data$2f$deployAI$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]
+    "Deploy & AI Squad": __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$data$2f$deployAI$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"],
+    "4-Year B.Tech CSE": Roadmap_4
 };
 const __TURBOPACK__default__export__ = roadmapData;
 }),
@@ -939,31 +946,50 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$
 function Page() {
     const [selected, setSelected] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])("Frontend");
     const [selectedTopic, setSelectedTopic] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(Object.keys(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$index$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]["Frontend"])[0]);
+    const [sidebarOpen, setSidebarOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const categories = Object.keys(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$index$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"]);
     const topics = typeof __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$index$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"][selected] === "object" ? Object.keys(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$index$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"][selected]) : [];
     const selectedContent = typeof __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$index$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"][selected] === "object" ? __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$index$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"][selected][selectedTopic] : __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$index$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"][selected];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "flex w-full h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white overflow-hidden",
+        className: "flex flex-col md:flex-row w-full min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white overflow-hidden",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "w-64 bg-gradient-to-b from-gray-900 to-black border-r border-gray-800 p-6 flex flex-col",
+                className: `fixed md:static top-0 left-0 h-full md:h-auto w-64 bg-gradient-to-b from-gray-900 to-black border-r border-gray-800 p-6 flex flex-col transform md:translate-x-0 transition-transform duration-300 z-50 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`,
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                        className: "text-3xl font-extrabold mb-10 text-indigo-400 tracking-wide",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "flex justify-between items-center mb-10",
                         children: [
-                            "Skill",
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-white",
-                                children: "Forge"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                className: "text-3xl font-extrabold text-indigo-400 tracking-wide",
+                                children: [
+                                    "Skill",
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "text-white",
+                                        children: "Forge"
+                                    }, void 0, false, {
+                                        fileName: "[project]/app/(main)/roadmaps/page.jsx",
+                                        lineNumber: 34,
+                                        columnNumber: 18
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/app/(main)/roadmaps/page.jsx",
+                                lineNumber: 33,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                className: "md:hidden text-gray-400 hover:text-white",
+                                onClick: ()=>setSidebarOpen(false),
+                                children: "✕"
                             }, void 0, false, {
                                 fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                                lineNumber: 28,
-                                columnNumber: 16
+                                lineNumber: 36,
+                                columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                        lineNumber: 27,
+                        lineNumber: 32,
                         columnNumber: 9
                     }, this),
                     categories.map((category)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -971,47 +997,84 @@ function Page() {
                             onClick: ()=>{
                                 setSelected(category);
                                 setSelectedTopic(Object.keys(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$main$292f$roadmaps$2f$index$2e$jsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"][category])[0] || "");
+                                setSidebarOpen(false);
                             },
                             children: category
                         }, category, false, {
                             fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                            lineNumber: 31,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, this))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                lineNumber: 26,
+                lineNumber: 27,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex-1 px-10 py-8 overflow-y-auto",
+                className: "md:hidden flex justify-between items-center p-4 bg-gray-900 border-b border-gray-800",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                        className: "text-2xl font-bold text-indigo-400",
+                        children: [
+                            "Skill",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "text-white",
+                                children: "Forge"
+                            }, void 0, false, {
+                                fileName: "[project]/app/(main)/roadmaps/page.jsx",
+                                lineNumber: 67,
+                                columnNumber: 16
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/app/(main)/roadmaps/page.jsx",
+                        lineNumber: 66,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        className: "text-gray-400 hover:text-white text-2xl",
+                        onClick: ()=>setSidebarOpen(true),
+                        children: "☰"
+                    }, void 0, false, {
+                        fileName: "[project]/app/(main)/roadmaps/page.jsx",
+                        lineNumber: 69,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/app/(main)/roadmaps/page.jsx",
+                lineNumber: 65,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "flex-1 px-4 md:px-10 py-6 md:py-8 overflow-y-auto",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-4xl font-bold mb-6 text-indigo-400",
+                        className: "text-3xl md:text-4xl font-bold mb-6 text-indigo-400",
                         children: [
                             selected,
                             " Roadmap"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                        lineNumber: 52,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this),
                     topics.length > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex gap-3 mb-6 flex-wrap",
+                        className: "flex gap-2 md:gap-3 mb-6 flex-wrap",
                         children: topics.map((topic)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: `px-4 py-2 rounded-lg text-sm font-semibold transition-all ${selectedTopic === topic ? "bg-indigo-600 text-white" : "bg-gray-800 hover:bg-gray-700"}`,
+                                className: `px-3 md:px-4 py-2 rounded-lg text-sm md:text-base font-semibold transition-all ${selectedTopic === topic ? "bg-indigo-600 text-white" : "bg-gray-800 hover:bg-gray-700"}`,
                                 onClick: ()=>setSelectedTopic(topic),
                                 children: topic
                             }, topic, false, {
                                 fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                                lineNumber: 60,
+                                lineNumber: 87,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                        lineNumber: 58,
+                        lineNumber: 85,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1036,37 +1099,37 @@ function Page() {
                                 children: "Download PDF"
                             }, void 0, false, {
                                 fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                                lineNumber: 84,
+                                lineNumber: 111,
                                 columnNumber: 13
                             }, this),
                             selectedContent && selectedContent.sections ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "bg-gray-900/60 p-6 rounded-xl border border-gray-800 backdrop-blur-md",
+                                className: "bg-gray-900/60 p-4 md:p-6 rounded-xl border border-gray-800 backdrop-blur-md",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "text-2xl font-bold text-indigo-400 mb-2",
+                                        className: "text-xl md:text-2xl font-bold text-indigo-400 mb-2",
                                         children: selectedContent.title
                                     }, void 0, false, {
                                         fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                                        lineNumber: 97,
+                                        lineNumber: 124,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-gray-300 mb-6",
+                                        className: "text-gray-300 mb-4 md:mb-6",
                                         children: selectedContent.objective
                                     }, void 0, false, {
                                         fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                                        lineNumber: 100,
+                                        lineNumber: 127,
                                         columnNumber: 15
                                     }, this),
                                     selectedContent.sections.map((section, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "mb-6",
+                                            className: "mb-4 md:mb-6",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-                                                    className: "text-xl font-semibold text-indigo-300 mb-2",
+                                                    className: "text-lg md:text-xl font-semibold text-indigo-300 mb-2",
                                                     children: section.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                                                    lineNumber: 104,
+                                                    lineNumber: 133,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1075,49 +1138,49 @@ function Page() {
                                                             children: point
                                                         }, i, false, {
                                                             fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                                                            lineNumber: 109,
+                                                            lineNumber: 138,
                                                             columnNumber: 23
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                                                    lineNumber: 107,
+                                                    lineNumber: 136,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, index, true, {
                                             fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                                            lineNumber: 103,
+                                            lineNumber: 132,
                                             columnNumber: 17
                                         }, this))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                                lineNumber: 96,
+                                lineNumber: 123,
                                 columnNumber: 13
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "text-gray-400",
                                 children: "No roadmap content available."
                             }, void 0, false, {
                                 fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                                lineNumber: 116,
+                                lineNumber: 145,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                        lineNumber: 76,
+                        lineNumber: 103,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(main)/roadmaps/page.jsx",
-                lineNumber: 51,
+                lineNumber: 78,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/(main)/roadmaps/page.jsx",
-        lineNumber: 24,
+        lineNumber: 25,
         columnNumber: 5
     }, this);
 }

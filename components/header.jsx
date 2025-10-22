@@ -9,6 +9,7 @@ import {
   StarsIcon,
   Map,
   HelpCircle,
+  BookOpen,
 } from "lucide-react";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
@@ -102,6 +103,15 @@ export default async function Header() {
                     Roadmaps
                   </Link>
                 </DropdownMenuItem>
+
+                <DropdownMenuItem asChild>
+  <Link href="/preparationstreet" className="flex items-center gap-2">
+    <BookOpen className="h-4 w-4" /> {/* Change this icon as needed */}
+    PreparationStreet
+  </Link>
+</DropdownMenuItem>
+
+
               </DropdownMenuContent>
             </DropdownMenu>
           </SignedIn>

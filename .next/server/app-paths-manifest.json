@@ -1,6 +1,5 @@
 {
-  "/(main)/career-faqs/page": "app/(main)/career-faqs/page.js",
-  "/(main)/roadmaps/page": "app/(main)/roadmaps/page.js",
+  "/(main)/preparationstreet/page": "app/(main)/preparationstreet/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js"
 }

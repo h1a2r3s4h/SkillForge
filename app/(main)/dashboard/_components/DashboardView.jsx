@@ -97,8 +97,10 @@ const DashboardView = ({ insights }) => {
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{(insights.growthRate || 0).toFixed(1)}%</div>
-            <Progress value={Math.min(insights.growthRate || 0, 100)} className="mt-2" />
+            {/* <div className="text-2xl font-bold">{(insights.growthRate || 0).toFixed(1)}%</div>
+            <Progress value={Math.min(insights.growthRate || 0, 100)} className="mt-2" /> */}
+            <div className="text-2xl font-bold">{(insights.growthRate * 100)}%</div>
+            <Progress value={Math.min(insights.growthRate * 100 || 0, 100)} className="mt-2" />
           </CardContent>
         </Card>
 

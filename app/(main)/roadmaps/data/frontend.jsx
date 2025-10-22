@@ -80,6 +80,7 @@ const frontendRoadmap = {
     title: "JavaScript Surgeons 🩺",
     objective:
       "Master the fundamentals and advanced concepts of JavaScript, as well as the DOM, in scripting dynamic web pages.",
+      pdf: "/pdfs/javascript.pdf",
     sections: [
       {
         title: "1. JavaScript Basics – The Language of the Web",
