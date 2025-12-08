@@ -1,31 +1,22 @@
 # Node modules
 node_modules/
 
-# Environment variables
-.env
-
 # Next.js build output
 .next/
 out/
 dist/
 
-# Vercel / other caches
-.vercel/
-*.log
+# Environment variables
+.env
 
 # Prisma generated files
 /lib/generated/prisma
 
-# Clerk configuration (can include secrets)
+# Clerk configuration
 .clerk/
 
-# Mac / IDE files
+# IDE / OS files
 .DS_Store
 *.swp
-.idea/
 .vscode/
-
-# Optional: npm/yarn/pnpm lock files
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
+.idea/
