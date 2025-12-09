@@ -8,7 +8,7 @@ _Forge skills, shape your future — where careers are crafted with AI power._
 ---
 
 ## 🌐 Live Demo  
-🔗 **Website:** [https://skillforge.vercel.app](https://skill-forge-nrq9.vercel.app)  
+🔗 **Website:** [https://skillforge.vercel.app](https://skill-forge-eight.vercel.app)  
 📦 **GitHub Repo:** [https://github.com/h1a2r3s4h/SkillForge](https://github.com/h1a2r3s4h/SkillForge)
 
 ---
