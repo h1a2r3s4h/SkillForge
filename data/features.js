@@ -1,4 +1,14 @@
-import { BrainCircuit, Briefcase, LineChart, ScrollText, ChartNoAxesGantt, CircleQuestionMark, Code, MessagesSquare} from "lucide-react";
+import { 
+  BrainCircuit, 
+  Briefcase, 
+  LineChart, 
+  ScrollText, 
+  ChartNoAxesGantt, 
+  CircleQuestionMark, 
+  Code, 
+  MessagesSquare,
+  FileText
+} from "lucide-react";
 
 export const features = [
   {
@@ -31,20 +41,22 @@ export const features = [
     description:
       "Get clarity on questions like C++ vs Java for DSA or Web vs AI/ML, with detailed pros/cons and expert guidance to make informed decisions.",
   },
-
   {
     icon: <Code className="w-10 h-10 mb-4 text-primary" />,
     title: "Preparation Street",
     description:
       "Master web development fundamentals with clear, hands-on tutorials on web development. Get practical guidance, tips, and step-by-step explanations to build your skills confidently.",
-
   },
-
   {
-  icon: <MessagesSquare className="w-10 h-10 mb-4 text-primary" />,
-  title: "ForgeBot",
-  description:
-    "Your intelligent AI assistant designed to help you brainstorm, generate code, and answer questions instantly — seamlessly integrated into your workflow for maximum productivity.",
-}
-
+    icon: <MessagesSquare className="w-10 h-10 mb-4 text-primary" />,
+    title: "ForgeBot",
+    description:
+      "Your intelligent AI assistant designed to help you brainstorm, generate code, and answer questions instantly — seamlessly integrated into your workflow for maximum productivity.",
+  },
+  {
+    icon: <FileText className="w-10 h-10 mb-4 text-primary" />,
+    title: "AI Resume Builder",
+    description:
+      "Create professional, ATS-friendly resumes in minutes with AI assistance. Generate bullet points, optimize keywords, and tailor your resume for specific job roles effortlessly.",
+  }
 ];
