@@ -9,6 +9,7 @@ import {
   HelpCircle,
   BookOpen,
   MessagesSquare,
+  FileText,
 } from "lucide-react";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
@@ -73,6 +74,24 @@ export default async function Header() {
               </Button>
               <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
                 <MessagesSquare className="h-4 w-4 text-sky-500" />
+              </Button>
+            </Link>
+
+            {/* Resume Builder Button (LIKE FORGEBOT) */}
+            <Link
+              href="https://resume-builder-2i4b.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                className="hidden md:inline-flex items-center gap-2"
+              >
+                <FileText className="h-4 w-4 text-indigo-500" />
+                Resume Builder
+              </Button>
+              <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+                <FileText className="h-4 w-4 text-indigo-500" />
               </Button>
             </Link>
 
