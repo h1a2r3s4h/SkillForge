@@ -27,7 +27,8 @@ It combines **AI intelligence**, **automation**, and **real-time insights** to h
 - 💬 **ForgeBot** – AI chatbot assistant for instant career guidance  
 - ❓ **AI Career FAQs** – Clarifies common doubts (e.g., C++ vs Java, Web vs DSA)  
 - 🎓 **Preparation Street** – Curated video hub for web development and tech learning  
-- 🗺️ **Roadmaps** – Year-wise and role-based structured learning plans  
+- 🗺️ **Roadmaps** – Year-wise and role-based structured learning plans
+- 📄 AI Resume Builder – Create ATS-friendly resumes with AI-generated bullet points, keyword optimization, and role-specific tailoring
 
 ✨ Together, these make SkillForge a **24×7 intelligent career mentor**.
 
