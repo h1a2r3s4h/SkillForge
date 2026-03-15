@@ -10,7 +10,13 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { BriefcaseIcon, LineChart, TrendingUp, TrendingDown, Brain } from "lucide-react";
+import {
+  BriefcaseIcon,
+  LineChart,
+  TrendingUp,
+  TrendingDown,
+  Brain,
+} from "lucide-react";
 import { format, formatDistanceToNow } from "date-fns";
 import {
   Card,
@@ -23,15 +29,26 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 
 const DashboardView = ({ insights }) => {
-  // Transform salary data safely
-  const salaryData = insights.salaryRanges?.map((range) => ({
-    name: range.role || "N/A",
-    min: (range.min || 0) / 1000,
-    median: (range.median || 0) / 1000,
-    max: (range.max || 0) / 1000,
-  })) || [];
+  const safeInsights = insights || {
+    marketOutlook: "Neutral",
+    growthRate: 0,
+    demandLevel: "Medium",
+    topSkills: [],
+    salaryRanges: [],
+    keyTrends: [],
+    recommendedSkills: [],
+    lastUpdated: new Date(),
+    nextUpdate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+  };
 
-  // Demand level color
+  const salaryData =
+    safeInsights.salaryRanges?.map((range) => ({
+      name: range.role || "N/A",
+      min: (range.min || 0) / 1000,
+      median: (range.median || 0) / 1000,
+      max: (range.max || 0) / 1000,
+    })) || [];
+
   const getDemandLevelColor = (level) => {
     switch (level?.toLowerCase()) {
       case "high":
@@ -45,7 +62,6 @@ const DashboardView = ({ insights }) => {
     }
   };
 
-  // Market outlook icon + color
   const getMarketOutlookInfo = (outlook) => {
     switch (outlook?.toLowerCase()) {
       case "positive":
@@ -59,152 +75,190 @@ const DashboardView = ({ insights }) => {
     }
   };
 
-  const { icon: OutlookIcon, color: outlookColor } = getMarketOutlookInfo(insights.marketOutlook);
+  const { icon: OutlookIcon, color: outlookColor } = getMarketOutlookInfo(
+    safeInsights.marketOutlook
+  );
 
-  // Dates
-  const lastUpdatedDate = insights.lastUpdated
-    ? format(new Date(insights.lastUpdated), "dd/MM/yyyy")
+  const lastUpdatedDate = safeInsights.lastUpdated
+    ? format(new Date(safeInsights.lastUpdated), "dd/MM/yyyy")
     : "-";
-  const nextUpdateDistance = insights.nextUpdate
-    ? formatDistanceToNow(new Date(insights.nextUpdate), { addSuffix: true })
+
+  const nextUpdateDistance = safeInsights.nextUpdate
+    ? formatDistanceToNow(new Date(safeInsights.nextUpdate), {
+        addSuffix: true,
+      })
     : "-";
+
+  const growthPercentage = Number(safeInsights.growthRate || 0) * 100;
 
   return (
     <div className="space-y-6">
-      {/* Last updated badge */}
-      <div className="flex justify-between items-center">
+      <div className="flex items-center justify-between">
         <Badge variant="outline">Last updated: {lastUpdatedDate}</Badge>
       </div>
 
-      {/* Market Overview Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {/* Market Outlook */}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Market Outlook</CardTitle>
             <OutlookIcon className={`h-4 w-4 ${outlookColor}`} />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{insights.marketOutlook || "-"}</div>
-            <p className="text-xs text-muted-foreground">Next update {nextUpdateDistance}</p>
+            <div className="text-2xl font-bold">
+              {safeInsights.marketOutlook || "-"}
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Next update {nextUpdateDistance}
+            </p>
           </CardContent>
         </Card>
 
-        {/* Industry Growth */}
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Industry Growth</CardTitle>
             <TrendingUp className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            {/* <div className="text-2xl font-bold">{(insights.growthRate || 0).toFixed(1)}%</div>
-            <Progress value={Math.min(insights.growthRate || 0, 100)} className="mt-2" /> */}
-            <div className="text-2xl font-bold">{(insights.growthRate * 100)}%</div>
-            <Progress value={Math.min(insights.growthRate * 100 || 0, 100)} className="mt-2" />
+            <div className="text-2xl font-bold">
+              {growthPercentage.toFixed(1)}%
+            </div>
+            <Progress value={Math.min(growthPercentage, 100)} className="mt-2" />
           </CardContent>
         </Card>
 
-        {/* Demand Level */}
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Demand Level</CardTitle>
             <BriefcaseIcon className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">{insights.demandLevel || "-"}</div>
+            <div className="text-2xl font-bold">
+              {safeInsights.demandLevel || "-"}
+            </div>
             <div
-              className={`h-2 w-full rounded-full mt-2 ${getDemandLevelColor(insights.demandLevel || "")}`}
+              className={`mt-2 h-2 w-full rounded-full ${getDemandLevelColor(
+                safeInsights.demandLevel || ""
+              )}`}
             />
           </CardContent>
         </Card>
 
-        {/* Top Skills */}
         <Card>
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Top Skills</CardTitle>
             <Brain className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="flex flex-wrap gap-1">
-              {insights.topSkills?.map((skill) => (
-                <Badge key={skill} variant="secondary">{skill}</Badge>
-              )) || <span className="text-sm text-muted-foreground">No skills available</span>}
-            </div>
+            {safeInsights.topSkills?.length > 0 ? (
+              <div className="flex flex-wrap gap-1">
+                {safeInsights.topSkills.map((skill) => (
+                  <Badge key={skill} variant="secondary">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            ) : (
+              <span className="text-sm text-muted-foreground">
+                No skills available
+              </span>
+            )}
           </CardContent>
         </Card>
       </div>
 
-      {/* Salary Ranges Chart */}
       <Card className="col-span-4">
         <CardHeader>
           <CardTitle>Salary Ranges by Role</CardTitle>
-          <CardDescription>Displaying minimum, median, and maximum salaries (in thousands)</CardDescription>
+          <CardDescription>
+            Displaying minimum, median, and maximum salaries (in thousands)
+          </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="h-[400px]">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={salaryData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip
-                  content={({ active, payload, label }) => {
-                    if (active && payload && payload.length) {
-                      return (
-                        <div className="bg-background border rounded-lg p-2 shadow-md">
-                          <p className="font-medium">{label}</p>
-                          {payload.map((item) => (
-                            <p key={item.name} className="text-sm">
-                              {item.name}: ${item.value.toLocaleString()}K
-                            </p>
-                          ))}
-                        </div>
-                      );
-                    }
-                    return null;
-                  }}
-                />
-                <Bar dataKey="min" fill="#94a3b8" name="Min Salary (K)" />
-                <Bar dataKey="median" fill="#64748b" name="Median Salary (K)" />
-                <Bar dataKey="max" fill="#475569" name="Max Salary (K)" />
-              </BarChart>
-            </ResponsiveContainer>
+          <div className="h-[400px] w-full min-w-0">
+            {salaryData.length > 0 ? (
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={salaryData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip
+                    content={({ active, payload, label }) => {
+                      if (active && payload && payload.length) {
+                        return (
+                          <div className="rounded-lg border bg-background p-2 shadow-md">
+                            <p className="font-medium">{label}</p>
+                            {payload.map((item, index) => (
+                              <p key={`${item.name}-${index}`} className="text-sm">
+                                {item.name}: ${Number(item.value).toLocaleString()}K
+                              </p>
+                            ))}
+                          </div>
+                        );
+                      }
+                      return null;
+                    }}
+                  />
+                  <Bar dataKey="min" fill="#94a3b8" name="Min Salary" />
+                  <Bar dataKey="median" fill="#64748b" name="Median Salary" />
+                  <Bar dataKey="max" fill="#475569" name="Max Salary" />
+                </BarChart>
+              </ResponsiveContainer>
+            ) : (
+              <div className="flex h-full items-center justify-center text-sm text-muted-foreground">
+                No salary data available
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>
 
-      {/* Industry Trends & Recommended Skills */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Key Trends */}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Key Industry Trends</CardTitle>
-            <CardDescription>Current trends shaping the industry</CardDescription>
+            <CardDescription>
+              Current trends shaping the industry
+            </CardDescription>
           </CardHeader>
           <CardContent>
-            <ul className="space-y-4">
-              {insights.keyTrends?.map((trend, index) => (
-                <li key={index} className="flex items-start space-x-2">
-                  <div className="h-2 w-2 mt-2 rounded-full bg-primary" />
-                  <span>{trend}</span>
-                </li>
-              )) || <li className="text-sm text-muted-foreground">No trends available</li>}
-            </ul>
+            {safeInsights.keyTrends?.length > 0 ? (
+              <ul className="space-y-4">
+                {safeInsights.keyTrends.map((trend, index) => (
+                  <li key={index} className="flex items-start space-x-2">
+                    <div className="mt-2 h-2 w-2 rounded-full bg-primary" />
+                    <span>{trend}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-sm text-muted-foreground">
+                No trends available
+              </p>
+            )}
           </CardContent>
         </Card>
 
-        {/* Recommended Skills */}
         <Card>
           <CardHeader>
             <CardTitle>Recommended Skills</CardTitle>
-            <CardDescription>Skills to consider developing</CardDescription>
+            <CardDescription>
+              Skills to consider developing
+            </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="flex flex-wrap gap-2">
-              {insights.recommendedSkills?.map((skill) => (
-                <Badge key={skill} variant="outline">{skill}</Badge>
-              )) || <span className="text-sm text-muted-foreground">No recommended skills</span>}
-            </div>
+            {safeInsights.recommendedSkills?.length > 0 ? (
+              <div className="flex flex-wrap gap-2">
+                {safeInsights.recommendedSkills.map((skill) => (
+                  <Badge key={skill} variant="outline">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            ) : (
+              <span className="text-sm text-muted-foreground">
+                No recommended skills
+              </span>
+            )}
           </CardContent>
         </Card>
       </div>
