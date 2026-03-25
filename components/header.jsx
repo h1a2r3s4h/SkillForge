@@ -10,6 +10,7 @@ import {
   BookOpen,
   MessagesSquare,
   FileText,
+  Shield,
 } from "lucide-react";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
@@ -94,6 +95,24 @@ export default async function Header() {
                 <FileText className="h-4 w-4 text-indigo-500" />
               </Button>
             </Link>
+
+            {/* AI Shield Button */}
+<Link href="/ai-shield">
+  <Button
+    variant="outline"
+    className="hidden md:inline-flex items-center gap-2 border-green-500/30 hover:border-green-500/50 hover:bg-green-500/10"
+  >
+    <Shield className="h-4 w-4 text-green-500" />
+    AI Shield
+  </Button>
+
+  <Button
+    variant="ghost"
+    className="md:hidden w-10 h-10 p-0 hover:bg-green-500/10"
+  >
+    <Shield className="h-4 w-4 text-green-500" />
+  </Button>
+</Link>
 
             {/* Growth Tools Dropdown */}
             <DropdownMenu>
