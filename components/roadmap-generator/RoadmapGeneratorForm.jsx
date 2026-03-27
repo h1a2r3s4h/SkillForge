@@ -331,22 +331,38 @@ ${(result.interviewPrep || [])
           </p>
 
           <Button
-            type="submit"
-            disabled={loading}
-            className="rounded-xl bg-violet-600 px-6 transition-all duration-300 hover:scale-[1.03] hover:bg-violet-500"
-          >
-            {loading ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Generating...
-              </>
-            ) : (
-              <>
-                <Wand2 className="mr-2 h-4 w-4" />
-                Generate Roadmap
-              </>
-            )}
-          </Button>
+  type="submit"
+  disabled={loading}
+  className="relative group overflow-hidden rounded-2xl px-7 py-3 font-semibold text-white 
+  bg-gradient-to-r from-violet-600 via-purple-600 to-indigo-600
+  shadow-[0_0_20px_rgba(139,92,246,0.5)] 
+  transition-all duration-300 
+  hover:shadow-[0_0_35px_rgba(139,92,246,0.9)] 
+  hover:scale-[1.04] active:scale-[0.98]"
+>
+  {/* Glow Layer */}
+  <span className="absolute inset-0 bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-500 opacity-0 group-hover:opacity-100 blur-xl transition duration-500"></span>
+
+  {/* Shine Effect */}
+  <span className="absolute inset-0 overflow-hidden">
+    <span className="absolute -left-full top-0 h-full w-1/2 bg-white/20 blur-md rotate-12 group-hover:left-full transition-all duration-700"></span>
+  </span>
+
+  {/* Content */}
+  <span className="relative flex items-center justify-center">
+    {loading ? (
+      <>
+        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+        Generating...
+      </>
+    ) : (
+      <>
+        <Wand2 className="mr-2 h-4 w-4 group-hover:rotate-12 transition" />
+        Generate Roadmap
+      </>
+    )}
+  </span>
+</Button>
         </div>
 
         {error ? (
