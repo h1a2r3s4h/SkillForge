@@ -1,18 +1,3 @@
-# 🧠 SkillForge  
-_Forge skills, shape your future — where careers are crafted with AI power._
-
----
-
-![SkillForge Banner](https://github.com/h1a2r3s4h/SkillForge/blob/main/banner1.png?raw=true)
-
----
-
-## 🌐 Live Demo  
-🔗 **Website:** https://skill-forge-eight.vercel.app  
-📦 **GitHub Repo:** https://github.com/h1a2r3s4h/SkillForge  
-
----
-
 ## 📜 Overview
 
 **SkillForge** is a next-generation **AI-powered career preparation platform** designed for students and professionals.  
@@ -22,6 +7,7 @@ It combines **AI intelligence, automation, and real-time insights** to help user
 - Practice AI-driven interviews  
 - Analyze resumes with smart feedback  
 - Explore structured career roadmaps  
+- Generate personalized AI learning roadmaps  
 
 👉 All in one unified platform — acting as a **24×7 AI career mentor**.
 
@@ -52,6 +38,16 @@ It combines **AI intelligence, automation, and real-time insights** to help user
 
 ---
 
+### 🗺️ AI Roadmap Generator
+- Generate **personalized learning roadmaps** based on role, skills, and goals  
+- Supports domains like **Web Development, DSA, AI, Full Stack, and more**
+- Creates **step-by-step progression** from beginner to advanced
+- Displays roadmap in a **clean visual flowchart-style UI**
+- Includes **copy, download, and local save support**
+- Built for **fast generation with reusable AI + caching architecture**
+
+---
+
 ### 💬 ForgeBot (AI Assistant)
 - Instant career guidance  
 - Tech stack suggestions  
@@ -79,8 +75,9 @@ It combines **AI intelligence, automation, and real-time insights** to help user
 
 ---
 
-## 🧠 System Architecture (AI Shield Flow)
+## 🧠 System Architecture
 
+### AI Shield Flow
 ```text
 User Input → Parse Resume → AI Shield Middleware → Cache/Rate Limit → AI Analysis → Store Cache → UI Response
 ```
@@ -103,6 +100,7 @@ User Input → Parse Resume → AI Shield Middleware → Cache/Rate Limit → AI
 | **Frontend** | Next.js 15, React 19, Tailwind CSS, Shadcn UI |
 | **Backend** | Next.js API Routes, Inngest |
 | **Database** | NeonDB (PostgreSQL), Prisma ORM |
+| **Roadmap Persistence** | localStorage |
 | **Authentication** | Clerk |
 | **AI Layer** | Gemini API (via OpenRouter) |
 | **Caching & Control** | Redis (Rate Limiting + Cache + Locks) |
@@ -145,6 +143,8 @@ http://localhost:3000
 - Reduced redundant AI calls using **hash-based caching**  
 - Implemented **rate limiting & duplicate request locks**  
 - Designed **structured AI JSON outputs** for UI rendering  
+- Built an **AI Roadmap Generator** with structured generation + visual roadmap UI
+- Enabled **copy, download, and local persistence** for generated roadmaps
 - Developed **modular full-stack architecture (Next.js App Router)**  
 
 ---
@@ -157,6 +157,7 @@ Unlike typical AI tools, SkillForge:
 - Focuses on **real-world career workflows**  
 - Implements **production-grade backend optimizations**  
 - Delivers **actionable insights, not just raw AI output**  
+- Converts user goals into **clear visual learning roadmaps**
 
 ---
 
@@ -166,7 +167,7 @@ Unlike typical AI tools, SkillForge:
 - Multi-agent AI system (Career Planner + Interviewer + Reviewer)  
 - Personalized career tracking dashboard  
 - AI-powered skill gap analysis  
-
+- Shareable roadmap links and progress tracking
 ---
 
 ## 👨‍💻 Author
