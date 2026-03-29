@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "./ui/button";
 import {
   LayoutDashboard,
+  Activity,
   GraduationCap,
   ChevronDown,
   StarsIcon,
@@ -130,6 +131,23 @@ export default async function Header() {
     className="md:hidden w-10 h-10 p-0 hover:bg-violet-500/10 transition-all"
   >
     <Map className="h-4 w-4 text-violet-400" />
+  </Button>
+</Link>
+
+<Link href="/system-health">
+  <Button
+    variant="outline"
+    className="hidden md:inline-flex items-center gap-2 border-purple-500/30 hover:border-purple-500/50 hover:bg-purple-500/10"
+  >
+    <Activity className="h-4 w-4 text-purple-500" />
+    System Health
+  </Button>
+
+  <Button
+    variant="ghost"
+    className="md:hidden w-10 h-10 p-0 hover:bg-purple-500/10"
+  >
+    <Activity className="h-4 w-4 text-purple-500" />
   </Button>
 </Link>
 

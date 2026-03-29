@@ -1,9 +1,14 @@
 import { NextResponse } from "next/server";
 import { withAIShield } from "@/lib/ai-shield";
 import { openrouter } from "@/lib/openrouter";
+import { incrementMetric, pushLatency } from "@/lib/metrics";
 
 export async function POST(req) {
+  const startTime = Date.now();
+
   try {
+    await incrementMetric("api_calls");
+
     const body = await req.json();
     const {
       resumeText,
@@ -13,6 +18,8 @@ export async function POST(req) {
     } = body;
 
     if (!resumeText) {
+      await incrementMetric("bad_requests");
+
       return NextResponse.json(
         { success: false, message: "Resume text is required." },
         { status: 400 }
@@ -74,7 +81,6 @@ Return valid JSON only in this exact format:
   "strengths": string[],
   "weaknesses": string[],
   "suggestions": string[],
-
   "actionableFixes": [
     {
       "issue": string,
@@ -110,10 +116,30 @@ Rules for actionableFixes:
         AI_ERROR: 500,
       };
 
+      if (shieldResult.type === "RATE_LIMIT") {
+        await incrementMetric("rate_limit_hits");
+      }
+
+      if (shieldResult.type === "DUPLICATE_REQUEST") {
+        await incrementMetric("duplicate_requests");
+      }
+
+      if (shieldResult.type === "AI_ERROR") {
+        await incrementMetric("ai_errors");
+      }
+
       return NextResponse.json(shieldResult, {
         status: statusMap[shieldResult.type] || 500,
       });
     }
+
+    if (shieldResult.cached) {
+      await incrementMetric("cache_hits");
+    } else {
+      await incrementMetric("fresh_ai_responses");
+    }
+
+    await incrementMetric("successful_responses");
 
     return NextResponse.json({
       success: true,
@@ -122,6 +148,7 @@ Rules for actionableFixes:
     });
   } catch (error) {
     console.error("Resume Analyzer Route Error:", error);
+    await incrementMetric("server_errors");
 
     return NextResponse.json(
       {
@@ -130,5 +157,8 @@ Rules for actionableFixes:
       },
       { status: 500 }
     );
+  } finally {
+    const latency = Date.now() - startTime;
+    await pushLatency(latency);
   }
 }
