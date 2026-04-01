@@ -11,7 +11,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)](https://neon.tech/)
 [![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://upstash.com/)
-[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel)](https://vercel.com/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 
 </div>
 
@@ -116,13 +116,14 @@ This isn't just an AI API call wrapped in a route handler. The AI Shield layer i
 | **Authentication** | Clerk |
 | **AI Layer** | Google Gemini (via OpenRouter) |
 | **Caching & Control** | Upstash Redis (Rate Limiting + Cache + Locks) |
-| **Persistence** | localStorage (Roadmap Generator) |
-| **Hosting** | Vercel + Neon Cloud |
+| **Containerization** | Docker |
 | **Version Control** | Git & GitHub |
 
 ---
 
 ## ⚙️ Installation & Setup
+
+### Option 1 — Local Development
 
 ```bash
 # 1. Clone the repository
@@ -133,13 +134,7 @@ cd SkillForge
 npm install
 
 # 3. Configure environment variables
-# Create a .env.local file and add:
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-CLERK_SECRET_KEY=your_clerk_secret_key
-DATABASE_URL=your_neondb_url
-OPENROUTER_API_KEY=your_openrouter_api_key
-UPSTASH_REDIS_REST_URL=your_redis_url
-UPSTASH_REDIS_REST_TOKEN=your_redis_token
+# Create a .env file and add all required keys (see below)
 
 # 4. Run database migrations
 npx prisma migrate dev
@@ -149,6 +144,65 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Option 2 — Docker
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/h1a2r3s4h/SkillForge.git
+cd SkillForge
+
+# 2. Fill in your .env file (see below)
+
+# 3. Build the Docker image
+docker build \
+  --build-arg NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key \
+  --build-arg CLERK_SECRET_KEY=your_clerk_secret_key \
+  --build-arg UPSTASH_REDIS_REST_URL=https://your_url.upstash.io \
+  --build-arg UPSTASH_REDIS_REST_TOKEN=your_token \
+  --build-arg OPENROUTER_API_KEY=your_openrouter_key \
+  -t skillforge .
+
+# 4. Run the container
+docker run -p 3000:3000 --env-file .env skillforge
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env` file in the root directory with the following (no quotes around values):
+
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/onboarding
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/onboarding
+DATABASE_URL=postgresql://user:password@host/dbname
+GEMINI_API_KEY=your_gemini_api_key
+UPSTASH_REDIS_REST_URL=https://your_url.upstash.io
+UPSTASH_REDIS_REST_TOKEN=your_token
+OPENROUTER_API_KEY=your_openrouter_key
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=your_email@gmail.com
+SMTP_PASS=your_app_password
+RECIPIENT_EMAIL=your_email@gmail.com
+```
+
+| Variable | Where to get it |
+|----------|----------------|
+| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | [dashboard.clerk.com](https://dashboard.clerk.com) |
+| `CLERK_SECRET_KEY` | [dashboard.clerk.com](https://dashboard.clerk.com) |
+| `DATABASE_URL` | [neon.tech](https://neon.tech) |
+| `GEMINI_API_KEY` | [aistudio.google.com](https://aistudio.google.com) |
+| `UPSTASH_REDIS_REST_URL` | [console.upstash.com](https://console.upstash.com) |
+| `UPSTASH_REDIS_REST_TOKEN` | [console.upstash.com](https://console.upstash.com) |
+| `OPENROUTER_API_KEY` | [openrouter.ai](https://openrouter.ai) |
 
 ---
 
@@ -186,6 +240,7 @@ SkillForge/
 │   └── prisma.js                # Prisma client
 ├── prisma/
 │   └── schema.prisma
+├── Dockerfile
 └── public/
 ```
 
@@ -198,7 +253,7 @@ SkillForge/
 - **Distributed Locks** — Prevents race conditions on parallel duplicate submissions using Redis
 - **Structured AI Outputs** — All AI responses return typed JSON schemas, enabling reliable frontend rendering
 - **Modular Full-Stack Architecture** — Clean separation between AI logic, API routes, and UI components using Next.js App Router
-- **AI Roadmap Generator** — Converts vague user goals into step-by-step visual roadmaps with copy, download, and persistence support
+- **Dockerized Deployment** — Fully containerized for consistent, reproducible production deployments
 
 ---
 
@@ -211,6 +266,7 @@ SkillForge/
 | Career Prep | Single feature | Resume + Interview + Roadmap + Guidance in one platform |
 | Roadmaps | Static templates | AI-generated, personalized, visually rendered |
 | Architecture | Basic CRUD | System design thinking with Redis-backed middleware |
+| Deployment | Manual setup | Docker-ready containerized build |
 
 ---
 
@@ -238,7 +294,7 @@ SkillForge/
 
 ## 👨‍💻 Author
 
-**Harshit Gangwar**
+**Harshit Gangwar**  
 BTech CSIT'27 | Full-Stack Developer | AI-Powered Product Builder
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/h1a2r3s4h)
