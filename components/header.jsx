@@ -12,6 +12,8 @@ import {
   MessagesSquare,
   FileText,
   Shield,
+  Sparkles,
+  Bot,
 } from "lucide-react";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
@@ -44,7 +46,6 @@ export default async function Header() {
           </h1>
         </Link>
 
-        {/* Action Buttons */}
         <div className="flex items-center space-x-2 md:space-x-4">
           <SignedIn>
             {/* Dashboard Button */}
@@ -61,95 +62,199 @@ export default async function Header() {
               </Button>
             </Link>
 
-            {/* ForgeBot Button */}
-            <Link
-              href="https://forge-bot-git-main-h1a2r3s4hs-projects.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                variant="outline"
-                className="hidden md:inline-flex items-center gap-2"
+            {/* Career Copilot */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="outline"
+                  className="hidden md:inline-flex items-center gap-2 border-sky-500/30 hover:border-sky-500/50 hover:bg-sky-500/10 transition-all"
+                >
+                  <div className="flex items-center gap-1.5">
+  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-sky-500/10 border border-sky-500/20">
+    <Bot className="h-3.5 w-3.5 text-sky-400" />
+  </div>
+  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-500/10 border border-indigo-500/20">
+    <Sparkles className="h-3 w-3 text-indigo-400" />
+  </div>
+</div>
+                  Career Copilot
+                  <ChevronDown className="h-4 w-4" />
+                </Button>
+              </DropdownMenuTrigger>
+
+              <DropdownMenuContent
+                align="center"
+                className="w-72 rounded-2xl border border-white/10 bg-background/95 backdrop-blur-xl p-2"
               >
-                <MessagesSquare className="h-4 w-4 text-sky-500" />
-                ForgeBot
-              </Button>
-              <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
-                <MessagesSquare className="h-4 w-4 text-sky-500" />
-              </Button>
-            </Link>
+                <div className="px-3 py-2 border-b border-white/10 mb-2">
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5">
+  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-sky-500/10 border border-sky-500/20">
+    <Bot className="h-3.5 w-3.5 text-sky-400" />
+  </div>
+  <div className="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-500/10 border border-indigo-500/20">
+    <Sparkles className="h-3 w-3 text-indigo-400" />
+  </div>
+</div>
+                    <p className="text-sm font-semibold">Career Copilot</p>
+                  </div>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Your AI-powered career workspace
+                  </p>
+                </div>
 
-            {/* Resume Builder Button */}
-            <Link
-              href="https://resume-builder-2i4b.vercel.app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                variant="outline"
-                className="hidden md:inline-flex items-center gap-2"
+                <DropdownMenuItem asChild>
+                  <Link
+                    href="https://forge-bot-git-main-h1a2r3s4hs-projects.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 rounded-xl px-3 py-2"
+                  >
+                    <MessagesSquare className="h-4 w-4 text-sky-500" />
+                    <div className="flex flex-col">
+                      <span className="text-sm font-medium">ForgeBot</span>
+                      <span className="text-xs text-muted-foreground">
+                        AI assistant for guidance
+                      </span>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem asChild>
+                  <Link
+                    href="https://resume-builder-2i4b.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 rounded-xl px-3 py-2"
+                  >
+                    <FileText className="h-4 w-4 text-indigo-500" />
+                    <div className="flex flex-col">
+                      <span className="text-sm font-medium">Resume Builder</span>
+                      <span className="text-xs text-muted-foreground">
+                        Build ATS-friendly resumes
+                      </span>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem asChild>
+                  <Link
+                    href="/ai-shield"
+                    className="flex items-center gap-3 rounded-xl px-3 py-2"
+                  >
+                    <Shield className="h-4 w-4 text-green-500" />
+                    <div className="flex flex-col">
+                      <span className="text-sm font-medium">AI Shield</span>
+                      <span className="text-xs text-muted-foreground">
+                        Analyze resume and get fixes
+                      </span>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem asChild>
+                  <Link
+                    href="/roadmap-generator"
+                    className="flex items-center gap-3 rounded-xl px-3 py-2"
+                  >
+                    <Map className="h-4 w-4 text-violet-400" />
+                    <div className="flex flex-col">
+                      <span className="text-sm font-medium">ForgePathAI</span>
+                      <span className="text-xs text-muted-foreground">
+                        Generate smart learning roadmaps
+                      </span>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+
+                <DropdownMenuItem asChild>
+                  <Link
+                    href="/system-health"
+                    className="flex items-center gap-3 rounded-xl px-3 py-2"
+                  >
+                    <Activity className="h-4 w-4 text-purple-500" />
+                    <div className="flex flex-col">
+                      <span className="text-sm font-medium">System Health</span>
+                      <span className="text-xs text-muted-foreground">
+                        Track AI performance and reliability
+                      </span>
+                    </div>
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Mobile Career Copilot */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
+                  <div className="relative flex items-center justify-center">
+                    <Bot className="h-4 w-4 text-sky-400" />
+                    <Sparkles className="h-3 w-3 text-indigo-400 absolute -top-1 -right-1" />
+                  </div>
+                </Button>
+              </DropdownMenuTrigger>
+
+              <DropdownMenuContent
+                align="end"
+                className="w-72 rounded-2xl border border-white/10 bg-background/95 backdrop-blur-xl p-2"
               >
-                <FileText className="h-4 w-4 text-indigo-500" />
-                Resume Builder
-              </Button>
-              <Button variant="ghost" className="md:hidden w-10 h-10 p-0">
-                <FileText className="h-4 w-4 text-indigo-500" />
-              </Button>
-            </Link>
+                <div className="px-3 py-2 border-b border-white/10 mb-2">
+                  <p className="text-sm font-semibold">Career Copilot</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    Your AI-powered career workspace
+                  </p>
+                </div>
 
-            {/* AI Shield Button */}
-            <Link href="/ai-shield">
-              <Button
-                variant="outline"
-                className="hidden md:inline-flex items-center gap-2 border-green-500/30 hover:border-green-500/50 hover:bg-green-500/10"
-              >
-                <Shield className="h-4 w-4 text-green-500" />
-                AI Shield
-              </Button>
+                <DropdownMenuItem asChild>
+                  <Link
+                    href="https://forge-bot-git-main-h1a2r3s4hs-projects.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3"
+                  >
+                    <MessagesSquare className="h-4 w-4 text-sky-500" />
+                    ForgeBot
+                  </Link>
+                </DropdownMenuItem>
 
-              <Button
-                variant="ghost"
-                className="md:hidden w-10 h-10 p-0 hover:bg-green-500/10"
-              >
-                <Shield className="h-4 w-4 text-green-500" />
-              </Button>
-            </Link>
+                <DropdownMenuItem asChild>
+                  <Link
+                    href="https://resume-builder-2i4b.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3"
+                  >
+                    <FileText className="h-4 w-4 text-indigo-500" />
+                    Resume Builder
+                  </Link>
+                </DropdownMenuItem>
 
-            {/* ForgePathAI Button */}
-{/* ForgePathAI Button */}
-<Link href="/roadmap-generator">
-  <Button
-    variant="outline"
-    className="hidden md:inline-flex items-center gap-2 border-violet-500/30 hover:border-violet-500/50 hover:bg-violet-500/10 transition-all"
-  >
-    <Map className="h-4 w-4 text-violet-400" />
-    ForgePathAI
-  </Button>
+                <DropdownMenuItem asChild>
+                  <Link href="/ai-shield" className="flex items-center gap-3">
+                    <Shield className="h-4 w-4 text-green-500" />
+                    AI Shield
+                  </Link>
+                </DropdownMenuItem>
 
-  <Button
-    variant="ghost"
-    className="md:hidden w-10 h-10 p-0 hover:bg-violet-500/10 transition-all"
-  >
-    <Map className="h-4 w-4 text-violet-400" />
-  </Button>
-</Link>
+                <DropdownMenuItem asChild>
+                  <Link
+                    href="/roadmap-generator"
+                    className="flex items-center gap-3"
+                  >
+                    <Map className="h-4 w-4 text-violet-400" />
+                    ForgePathAI
+                  </Link>
+                </DropdownMenuItem>
 
-<Link href="/system-health">
-  <Button
-    variant="outline"
-    className="hidden md:inline-flex items-center gap-2 border-purple-500/30 hover:border-purple-500/50 hover:bg-purple-500/10"
-  >
-    <Activity className="h-4 w-4 text-purple-500" />
-    System Health
-  </Button>
-
-  <Button
-    variant="ghost"
-    className="md:hidden w-10 h-10 p-0 hover:bg-purple-500/10"
-  >
-    <Activity className="h-4 w-4 text-purple-500" />
-  </Button>
-</Link>
+                <DropdownMenuItem asChild>
+                  <Link href="/system-health" className="flex items-center gap-3">
+                    <Activity className="h-4 w-4 text-purple-500" />
+                    System Health
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
 
             {/* Growth Tools Dropdown */}
             <DropdownMenu>
@@ -196,14 +301,12 @@ export default async function Header() {
             </DropdownMenu>
           </SignedIn>
 
-          {/* Sign In Button */}
           <SignedOut>
             <SignInButton>
               <Button variant="outline">Sign In</Button>
             </SignInButton>
           </SignedOut>
 
-          {/* User Button */}
           <SignedIn>
             <UserButton
               appearance={{
