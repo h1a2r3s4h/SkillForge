@@ -14,6 +14,8 @@ import {
   Shield,
   Sparkles,
   Bot,
+  Mic,
+  BadgeHelp,
 } from "lucide-react";
 import Link from "next/link";
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
@@ -121,6 +123,27 @@ export default async function Header() {
                 </DropdownMenuItem>
 
                 <DropdownMenuItem asChild>
+  <Link
+    href="https://vox-hire-voice-agent.vercel.app/dashboard#"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-3 rounded-xl px-3 py-2"
+  >
+    <Bot className="h-4 w-4 text-sky-500" />
+
+    <div className="flex flex-col">
+      <span className="text-sm font-medium">
+        AI Voice Interview Agent
+      </span>
+
+      <span className="text-xs text-muted-foreground">
+        Practice real-time AI voice interviews
+      </span>
+    </div>
+  </Link>
+</DropdownMenuItem>
+
+                <DropdownMenuItem asChild>
                   <Link
                     href="https://resume-builder-2i4b.vercel.app"
                     target="_blank"
@@ -217,6 +240,28 @@ export default async function Header() {
                     ForgeBot
                   </Link>
                 </DropdownMenuItem>
+
+                <DropdownMenuItem asChild>
+  <Link
+    href="https://vox-hire-voice-agent.vercel.app/dashboard#"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-3 rounded-xl px-3 py-2"
+  >
+    <Mic className="h-4 w-4 text-sky-500" />
+
+    <div className="flex flex-col">
+      <span className="text-sm font-medium">
+        AI Voice Interview Agent
+      </span>
+
+      <span className="text-xs text-muted-foreground">
+        Practice real-time AI voice interviews
+      </span>
+    </div>
+  </Link>
+</DropdownMenuItem>
+
 
                 <DropdownMenuItem asChild>
                   <Link
