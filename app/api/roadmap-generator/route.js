@@ -59,8 +59,10 @@ export async function POST(req) {
         const prompt = buildRoadmapPrompt(normalizedPayload);
 
         const completion = await openrouter.chat.completions.create({
-          model: "google/gemini-2.0-flash-001",
+          model: "google/gemini-2.5-flash",
           messages: [{ role: "user", content: prompt }],
+          max_tokens: 2000,
+  temperature: 0.7,
           response_format: { type: "json_object" },
         });
 

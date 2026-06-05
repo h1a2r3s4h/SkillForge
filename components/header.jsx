@@ -124,7 +124,7 @@ export default async function Header() {
 
                 <DropdownMenuItem asChild>
   <Link
-    href="https://vox-hire-voice-agent.vercel.app/dashboard#"
+    href="https://vox-hire-voice-agent.vercel.app"
     target="_blank"
     rel="noopener noreferrer"
     className="flex items-center gap-3 rounded-xl px-3 py-2"
