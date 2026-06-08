@@ -100,8 +100,10 @@ Rules for actionableFixes:
 `;
 
         const completion = await openrouter.chat.completions.create({
-          model: "google/gemini-2.0-flash-001",
+          model: "google/gemini-2.5-flash",
           messages: [{ role: "user", content: PROMPT }],
+          max_tokens: 2000,
+  temperature: 0.7,
           response_format: { type: "json_object" },
         });
 
